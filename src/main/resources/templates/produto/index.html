@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produto</title>
+</head>
+<body>
+	
+	<h2>Produtos</h2>
+	
+	<table>
+		<thead>
+			<th>Id</th>
+			<th>Nome</th>
+		</thead>
+		<tbody>
+			<tr th:each="produto : ${produtos}">
+				<td th:text="${produto.getId()}"></td>
+				<td th:text="${produto.getNome()}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="/produto/create"><input type="button" value="Criar produto"></a>
+	<a href="http://localhost:8080/"><input type="button" value="Voltar para home"></a>
+
+
+</body>
+</html>

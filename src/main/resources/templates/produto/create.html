@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Criar Produto</title>
+</head>
+<body>
+	<h2>Criar Produto</h2>
+	<input type="button" onclick="getCategoria()" value="Mostrar categoria">
+	<form method="post" action="/produto/create">
+		<p>
+			ID <input type="text" name="id" id="id">
+		</p>
+		<p>
+			Nome <input type="text" name="nome" id="nome">
+		</p>
+		<input type="submit" value="Salvar Produto">
+	</form>
+
+
+
+</body>
+<script>
+	function getCategoria(){
+		fetch("/produto/categoria")
+		.then(response => response.json())
+		.then(data => alert(data.descricao))
+		.catch(error => alert(error));
+	}
+</script>
+</html>

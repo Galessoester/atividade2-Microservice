@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+</head>
+<body>
+	
+	<h2>Clientes</h2>
+	
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Idade</th>
+			<th>Documento</th>
+		</thead>
+		<tbody>
+			<tr th:each="cliente : ${clientes}">
+				<td th:text="${cliente.getNome()}"></td>
+				<td th:text="${cliente.getIdade()}"></td>
+				<td th:text="${cliente.getDocumento()}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="http://localhost:8080/"><input type="button" value="Voltar para home"></a>
+	
+
+
+</body>
+</html>
